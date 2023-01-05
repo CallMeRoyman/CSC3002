@@ -1,0 +1,2 @@
+struct wait_opts wopts; // do_wait() args
+int status;// child process status

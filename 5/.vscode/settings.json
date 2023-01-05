@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "iostream": "cpp",
+        "system_error": "cpp",
+        "ostream": "cpp"
+    },
+    "python.testing.pytestArgs": [
+        "csc300222fall"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "C_Cpp.errorSquiggles": "disabled"
+}

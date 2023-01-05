@@ -1,0 +1,16 @@
+array.size() -> 5
+array[0] -> 0
+array[0] = 0;
+array[0] -> 0
+array[1] -> 0
+array[1] = 1;
+array[1] -> 1
+array[2] -> 0
+array[2] = 2;
+array[2] -> 2
+array[3] -> 0
+array[3] = 3;
+array[3] -> 3
+array[4] -> 0
+array[4] = 4;
+array[4] -> 4

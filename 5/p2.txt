@@ -1,0 +1,42 @@
+isEmpty
+size
+set num 12
+get num
+contains num
+contains apple
+size
+set jack 13
+get jack
+size
+set royman 14
+size
+set clee 15
+size
+set raymondson 16
+size
+set jellx 17
+size
+set adam 18
+size
+set bella 19
+get bella
+size
+set carman 20
+size
+set david 21
+size
+set frank 22
+size
+set hank 23
+size
+set jordan 24
+size
+set kelly 25
+get kelly
+size
+remove kelly
+size
+clear
+size
+isEmpty
+quit

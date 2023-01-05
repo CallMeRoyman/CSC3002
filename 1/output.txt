@@ -1,0 +1,148 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+
+long findMaxVertex(bool visited[], long weights[],long V)
+{
+
+	
+	
+	long index = -1;
+
+	
+	
+	long maxW = INT_MIN;
+
+	
+	
+	for (long i = 0; i < V; i++) {
+
+		
+		
+		
+		if (visited[i] == false && weights[i] > maxW) {
+
+			
+			maxW = weights[i];
+
+			
+			index = i;
+		}
+	}
+	return index;
+}
+
+
+
+void prlongMaximumSpanningTree(vector<vector<long> > graph, long parent[],long V)
+{
+
+	
+	
+	
+	long MST = 0;
+
+	
+	
+	for (long i = 1; i < V; i++) {
+
+		
+		MST += graph[i][parent[i]];
+	}
+
+	cout << MST << '\n';
+	
+}
+
+
+void maximumSpanningTree(vector<vector<long> > graph,long V)
+{
+
+	
+	
+	bool visited[V];
+
+	
+	
+	long weights[V];
+
+	
+	
+	long parent[V];
+
+	
+	
+	for (long i = 0; i < V; i++) {
+		visited[i] = false;
+		weights[i] = INT_MIN;
+	}
+
+	
+	
+	weights[0] = INT_MAX;
+	parent[0] = -1;
+
+	
+	
+	for (long i = 0; i < V - 1; i++) {
+
+		
+		
+		long maxVertexIndex = findMaxVertex(visited, weights, V);
+
+		
+		visited[maxVertexIndex] = true;
+
+		
+		
+		for (long j = 0; j < V; j++) {
+
+			
+			
+			
+			if (graph[j][maxVertexIndex] != 0
+				&& visited[j] == false) {
+
+				
+				
+				if (graph[j][maxVertexIndex] > weights[j]) {
+
+					
+					weights[j] = graph[j][maxVertexIndex];
+
+					
+					parent[j] = maxVertexIndex;
+				}
+			}
+		}
+	}
+
+	
+	prlongMaximumSpanningTree(graph, parent, V);
+}
+
+
+int main()
+{
+    long N,mod;
+    cin >> N >> mod;
+    long popu[N];
+    vector<long> temp(N,0);
+    vector<vector<long> > vec(N,temp);
+    for(long i=0;i < N;i++){
+        cin >> popu[i];
+    }
+    for(long i = 0;i < N;i++){
+        for(long j = 0;j < N;j++){
+        vec [i][j] = popu[i]*popu[j]%mod;
+        if(i==j){
+            vec[i][j]=0;
+        }
+        }
+    }
+	
+	maximumSpanningTree(vec,N);
+	return 0;
+}

@@ -1,0 +1,1 @@
+int pid, /*this pid*/ ppid; /*parent pid*/
